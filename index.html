@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="bst/css/bootstrap.css" rel="stylesheet">
+    <link href="bst/fa/css/all.css" rel="stylesheet">
+</head>
+<body style="background-color:#333">
+       
+    <div class="container" style="padding-top: 40px;">
+        <div class="row">
+                <div class="col-md-4">
+                        <div class="card shadow">
+                            <div class="card-header">
+                          Add your work to list
+                            </div>
+                            <div class="card-body">   
+                                
+                                <div class="form-group">
+                                     <label >To do</label>
+                                     <input class="form-control"  id="todo" type="text" >
+                                </div>
+                                 <div class="form-group">
+                                     <label >Distribution</label>
+                                     <textarea  class="form-control" type="text" id="Details" ></textarea>
+                                     </div>
+                                 <div class="form-group">
+                                     <label >Pursuing</label>
+                                     <input type="checkbox" >
+                                     <label >Done</label>
+                                     <input type="checkbox">
+                                 </div>
+                                <div class="form-group">
+                                     <button class="btn btn-success btn-block">Add</button>
+                                 </div>             
+                            </div>
+                        </div>   
+                </div>
+            <div class="col-md-4">
+             <div class="card shadow">
+             <div class="card-header">
+                 To Do Lists
+             </div>
+             <div class="card-body">
+               <div class="table">
+                   <table class="table-hover">
+                       <thead>
+                           <tr>
+                             <td>Tasks</td>
+                            
+                           </tr>
+                       </thead>
+                       <tbody>
+                            <tr class="show_tr">
+                                <td class="show_td"> </td>
+                            </tr>
+                       </tbody>       
+                   </table>
+               </div>
+             </div>
+             </div>            
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow" >
+                    <div class="card-header">
+                    Details
+                    </div>
+                    <div class="card-body">
+                         <p id="pp"></p>  
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+  
+    <script src="bst/js/bootstrap.js"></script>
+     <script src="bst/js/jquery.js"></script> 
+  
+    <script>
+    $(document).ready(function(){
+     $('.btn').click(function(){
+     var aa=$('#todo').val();
+     $('#todo').val("");  
+     $('.show_td').append('<div>' + aa +'<span class="fa fa-trash alert alert-danger"></span>'+ '<button class="btn btn-success">Details</button>' + '</div>');
+     });
+    
+     $('.show_td').on('click' , "button",function(){
+         var bb=$('#Details').val();   
+      $('#pp').html(bb);
+    });
+});
+    </script>
+
+</body>
+</html>
